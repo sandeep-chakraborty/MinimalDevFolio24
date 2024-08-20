@@ -272,7 +272,7 @@
   }
 
   .tag.react {
-      background-color: #61DAFB;
+      background-color: #0188bd;
       color: #282C34;
   }
 
@@ -826,7 +826,7 @@
     font-weight: bold;
 }
 .footer .heart {
-    color: #f38ba8;
+    color: red;
     /* Pink color for the heart */
 }
 /* ... existing styles ... */
