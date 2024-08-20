@@ -2,10 +2,6 @@
 
 Welcome to my personal portfolio website! This site showcases my journey, skills, projects, and ways to connect with me.
 
-## About
-
-I am Sandeep, a full-stack developer and AI engineer. I have a passion for creating innovative solutions that enhance human life. This portfolio highlights my skills, experiences, and projects.
-
 ## Website
 
 You can view my portfolio at [sandeeep.com](https://sandeeep.com).
