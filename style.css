@@ -655,7 +655,7 @@
 }
 
 .timeline-achievements li::before {
-    content: '✓';
+    content: '✿';
     position: absolute;
     left: 0;
     color: #3498db;
