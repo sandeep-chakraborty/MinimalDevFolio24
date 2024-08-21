@@ -17,8 +17,6 @@ You can view my portfolio at [sandeeep.com](https://sandeeep.com).
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Libraries**: Remixicon, Google Fonts
-- **Tools**: Docker, Git, AWS, Neo4j, Redis, VectorDB
 
 ## Connect with Me
 
