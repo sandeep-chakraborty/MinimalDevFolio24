@@ -952,8 +952,7 @@
     --text-color: #333333;
     --button-bg: #4a90e2;
     --light-gray: #f0f0f0;
-}
-#blogs {
+}#blogs {
     background-color: #f0f0f0;
     padding: 2rem 0;
     display: flex;
@@ -989,6 +988,8 @@
 }
 
 .blog-card {
+    position: relative;
+    /* Ensures the overlay is positioned correctly */
     background-color: #ffffff;
     border-radius: 8px;
     padding: 1.5rem;
@@ -1051,11 +1052,12 @@
     left: 0;
     width: 100%;
     height: 100%;
+    /* Ensure this only covers the blog card */
     opacity: 0;
+    z-index: 1;
+    /* Makes sure it stays above other elements within the card */
 }
 
-/* Reuse the existing styles for section-title and view-archive */
-/* Contact Section */
 #contact {
     padding: 4rem 0;
     background-color: var(--bg-color);
