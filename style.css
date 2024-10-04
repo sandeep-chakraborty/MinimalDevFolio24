@@ -587,7 +587,7 @@
 }
 
 .timeline-item:nth-child(even)::after {
-    left: 15px;
+   display:none;
 }
 
 .timeline-content {
