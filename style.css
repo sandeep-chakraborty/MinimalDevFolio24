@@ -587,7 +587,7 @@
 }
 
 .timeline-item:nth-child(even)::after {
-    left: -16px;
+    left: 15px;
 }
 
 .timeline-content {
@@ -687,7 +687,7 @@
      left: 16px;
  }
  .timeline-item:nth-child(2n) .timeline-icon {
-     left: -15px;
+     left: 16px;
  }
     .timeline-content {
         width: 100%;
