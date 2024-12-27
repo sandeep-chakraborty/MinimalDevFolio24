@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.innerHTML = document.body.getAttribute('data-theme') === 'dark'
             ? '<i class="ri-sun-line"></i> Light Mode'
             : '<i class="ri-moon-line"></i> Dark Mode';
-    });
-z});
+    });});
 
 // Smooth scrolling
 document.querySelectorAll('.smooth-scroll').forEach(anchor => {
