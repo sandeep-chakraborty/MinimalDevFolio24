@@ -10,6 +10,9 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const dropdownButtons = document.querySelectorAll('[data-dropdown]');
     const themeToggle = document.getElementById('theme-toggle');
+    
+    // Track currently open dropdown
+    let currentOpenDropdown = null;
             
     dropdownButtons.forEach(button => {
         button.addEventListener('click', function (event) {
@@ -17,22 +20,33 @@ document.addEventListener('DOMContentLoaded', function() {
             const dropdownId = this.getAttribute('data-dropdown') + '-dropdown';
             const dropdown = document.getElementById(dropdownId);
 
-            // Close all other dropdowns
-            document.querySelectorAll('.dropdown').forEach(d => {
-                if (d.id !== dropdownId) {
-                    d.style.display = 'none';
-                }
-            });
+            // If there's a currently open dropdown and it's different from the clicked one, close it
+            if (currentOpenDropdown && currentOpenDropdown !== dropdown) {
+                currentOpenDropdown.style.display = 'none';
+            }
 
             // Toggle the clicked dropdown
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+                currentOpenDropdown = null;
+            } else {
+                dropdown.style.display = 'block';
+                currentOpenDropdown = dropdown;
+            }
         });
 
         // Add hover functionality
         button.addEventListener('mouseenter', function() {
             const dropdownId = this.getAttribute('data-dropdown') + '-dropdown';
             const dropdown = document.getElementById(dropdownId);
+            
+            // Close currently open dropdown if it's different
+            if (currentOpenDropdown && currentOpenDropdown !== dropdown) {
+                currentOpenDropdown.style.display = 'none';
+            }
+            
             dropdown.style.display = 'block';
+            currentOpenDropdown = dropdown;
         });
 
         button.addEventListener('mouseleave', function(event) {
@@ -40,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const dropdown = document.getElementById(dropdownId);
             if (!dropdown.contains(event.relatedTarget)) {
                 dropdown.style.display = 'none';
+                currentOpenDropdown = null;
             }
         });
     });
@@ -60,7 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
         this.innerHTML = document.body.getAttribute('data-theme') === 'dark'
             ? '<i class="ri-sun-line"></i> Light Mode'
             : '<i class="ri-moon-line"></i> Dark Mode';
-    });});
+    });
+});
 
 // Smooth scrolling
 document.querySelectorAll('.smooth-scroll').forEach(anchor => {

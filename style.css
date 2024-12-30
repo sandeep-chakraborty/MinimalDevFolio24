@@ -151,8 +151,8 @@
   }
 
   .dropdown a:hover {
-      background-color: #ffd6d6;
-      color: #ff4d4d;
+      background-color: inherit;
+      color: inherit;
   }
 
   .dropdown a i {
@@ -1234,4 +1234,19 @@
 .blog-tag:nth-child(2) { background-color: #87CEEB; color: #000000; }
 .blog-tag:nth-child(3) { background-color: #000000; color: #ffffff; }
 .blog-tag:nth-child(4) { background-color: #4630EB; color: #ffffff; }
+
+.nav-item.pink + .dropdown a:hover {
+    background-color: #ffd6d6;
+    color: #ff4d4d;
+}
+
+.nav-item.blue + .dropdown a:hover {
+    background-color: #d6f5ff;
+    color: #00a3cc;
+}
+
+.nav-item.green + .dropdown a:hover {
+    background-color: #d6ffdb;
+    color: #00cc44;
+}
 
