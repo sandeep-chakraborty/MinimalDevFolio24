@@ -870,6 +870,7 @@
     padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    text-align: left;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -956,6 +957,7 @@
     background-color: #f0f0f0;
     padding: 2rem 0;
     display: flex;
+    text-align: -webkit-center;
 }
 
 .view-archive {
