@@ -750,6 +750,7 @@
     padding: 80px 0 40px;
     position: relative;
     overflow: hidden;
+    margin-top: -1px;  /* Ensure perfect connection with wave */
 }
 
 .footer::before {
@@ -1250,5 +1251,13 @@
 .nav-item.green + .dropdown a:hover {
     background-color: #d6ffdb;
     color: #00cc44;
+}
+
+/* Add these styles to fix the SVG wave gap */
+svg {
+    display: block;  /* Remove inline element spacing */
+    margin-bottom: -5px;  /* Remove any remaining gap */
+    width: 100%;
+    height: auto;
 }
 
