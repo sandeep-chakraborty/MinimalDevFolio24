@@ -1263,3 +1263,18 @@ svg {
     height: auto;
 }
 
+.cat-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -60px; /* Adjust this value to position the cat properly */
+    z-index: 10;
+}
+
+.footer-cat {
+    width: 120px; /* Increased from 80px to 120px */
+    height: auto;
+    position: relative;
+}
+
