@@ -1108,8 +1108,6 @@
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid #f9efef;
-  
 }
 
 .form-group {
@@ -1261,20 +1259,5 @@ svg {
     margin-bottom: -5px;  /* Remove any remaining gap */
     width: 100%;
     height: auto;
-}
-
-.cat-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: -60px; /* Adjust this value to position the cat properly */
-    z-index: 10;
-}
-
-.footer-cat {
-    width: 120px; /* Increased from 80px to 120px */
-    height: auto;
-    position: relative;
 }
 
