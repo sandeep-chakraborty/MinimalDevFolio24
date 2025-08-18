@@ -1,14 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandeep's portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/eagle.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>sandeep</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      font-weight: 400;
+      white-space: pre-line;
+      color: #000000;
+      padding: 40px;
+      line-height: 1.2;
+    }
+    h1 {
+      margin: 0 0 40px 0;
+      padding: 0;
+      font-size: 70px;
+      font-weight: bold;
+    }
+    h2 {
+      margin: 60px 0 20px 0;
+      padding: 0;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    p {
+      margin: 0 0 30px 0;
+      padding: 0;
+      font-size: 40px;
+    }
+    a {
+      color: #000000;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    ul {
+      font-size: 40px;
+      margin: 0 0 30px 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    li:before {
+      content: "+ ";
+    }
+    .expanded li:before {
+      content: "- ";
+    }
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #000;
+      margin: 60px 0;
+    }
+    .minimal-hr {
+      border: none;
+      height: 1px;
+      background-color: #ccc;
+      margin: 40px 0;
+    }
+    .expandable {
+      display: none;
+      font-size: 30px;
+      color: #666;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    .expanded .expandable {
+      display: block;
+    }
+  </style>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4Y671K7R4"></script>
@@ -20,414 +90,112 @@
   gtag('config', 'G-D4Y671K7R4');
 </script>
 </head>
+
 <body>
-    <header class="header" id="header">
-        <div class="container">
-            <div class="header-content">
-                <nav class="nav">
-                    <div class="nav-item-container">
-                        <button class="nav-item pink" data-dropdown="about">
-                            Sandeep <i class="ri-arrow-down-s-line"></i>
-                        </button>
-                        <div class="dropdown" id="about-dropdown">
-                            <a href="#hero" class="smooth-scroll"><i class="ri-home-line"></i> Home</a>
-                            <a href="#about" class="smooth-scroll"><i class="ri-user-smile-line"></i> Who am I?</a>
-                            <a href="#contact" class="smooth-scroll"><i class="ri-mail-line"></i> Contact</a>
-                        </div>
-                    </div>
-                    <div class="nav-item-container">
-                        <button class="nav-item blue" data-dropdown="menu">
-                        <i class="ri-menu-unfold-4-line"></i> Menu<i class="ri-arrow-down-s-line"></i>
-                        </button>
-                        <div class="dropdown" id="menu-dropdown">
-                            <a href="#hero" class="smooth-scroll">Home</a>
-                            <a href="#about" class="smooth-scroll">About</a>
-                            <a href="#experience" class="smooth-scroll">Experience</a>
-                            <a href="#contact" class="smooth-scroll">Contact</a>
-                        </div>
-                    </div>
-                    <div class="nav-item-container">
-                        <button href="#projects" class="nav-item green smooth-scroll">
-                            <i class="ri-folder-line"></i> Projects
-                        </button>
-                    </div>
-                    <div class="nav-item-container">
-                        <button href="#blogs" class="nav-item pink smooth-scroll">
-                            <i class="ri-article-line"></i> Blogs
-                        </button>
-                    </div>
-                </div>
-                    
-               
-                </nav>
-            </div>
+  <div class="container">
+    <h1>Sandeep.</h1>
+    
+    <p>is that enough? i guess no. let me write more.</p>
+    
+    <hr class="minimal-hr">
+    
+    <p>20 y/o builder from assam(India).</p>
+    <p>i build ai + full‑stack systems. i like small teams, hard problems, and clear outcomes.</p>
+    <p>i love the craft of building.</p>
+    
+    <hr>
+    
+    <h2>what i do.</h2>
+    <p>build ai stuff. write code. make things work.</p>
+    <p>stack‑agnostic: python, js/ts, C - whatever ships.</p>
+    <p>work from assam for companies worldwide.</p>
+    
+    <hr>
+    
+    <h2>companies.</h2>
+    <ul id="companies-list">
+      <li onclick="toggleExpand('xibon')">xibon ai (acquired)
+        <div class="expandable" id="xibon">started as intern. became founding engineer. built their core ai systems. reduced doc generation time by 80%. company got acquired.</div>
+      </li>
+      <li onclick="toggleExpand('karyon')">karyon bio (silicon valley)
+        <div class="expandable" id="karyon">
+          joined as full stack dev. built full stack apps. evolved to technical strategy working closely with CEO. opened $1M+ in connections/funding for the company. built healthcare ai systems, worked with real doctors, ensured HIPAA compliance. react + python and custom agentic SDK.
         </div>
-    </header>
+      </li>
+      
+      <li onclick="toggleExpand('warp')">warp development (current)
+        <div class="expandable" id="warp">prompt engineer, but i do internal systems full stack—everything the project needs, honestly.</div>
+      </li>
+    </ul>
+    
+    <hr>
+    
+    <h2>things i've built.</h2>
+    <ul>
+      <li><a href="https://github.com/sandeep-chakraborty/image-search-clip-faiss">image search with clip + faiss</a></li>
+      <li><a href="https://github.com/sandeep-chakraborty/ai-web-scraper">ai web scrapers</a></li>
+      <li><a href="https://pypi.org/project/kepler-ai/">kepler</a> - hated langchain, built something inspired by openai agents sdk (<a href="https://github.com/sandeep-chakraborty/kepler">github</a>)</li>
+      <li>healthcare systems that don't break</li>
+      <li>mobile apps on app store</li>
+      <li>stuff with databases and ai</li>
+    </ul>
+    
+    <hr>
+    
+    <h2>stack.</h2>
+    <p>python, react, docker, aws, whatever works.</p>
+    <p>don't care about trends. just ship.</p>
+    
+    <hr>
+    
+    <h2>philosophy.</h2>
+    <p>work for love of the craft. money i make is the byproduct</p>
+    <p>create something from nothing.</p>
+    <p>move fast, break things, but never get stuck - always have a way out.</p>
+    <p>use cursor to 10x the speed.</p>
+    <p>flow state = infinite output.</p>
+    
+    <hr>
+    
+    <h2>open for business.</h2>
+    <p>need someone to build, ship or figure stuff out? <a href="mailto:heyitssandeep@gmail.com?subject=Hey - came from your portfolio&body=hey lets chat!">email me.</a>
+    </p>
+    <hr>
+    
+    <h2>connect.</h2>
+    <p><a href="https://github.com/sandeep-chakraborty">github</a> / <a href="mailto:heyitssandeep@gmail.com?subject=Hey - came from your portfolio&body=hey lets chat!">email</a> /  <a href="https://www.linkedin.com/in/sandeep-c-293380317/" target="_blank" >linkedin</a></p></p>
+    <h2>blogs</h2>
+    <p><a href="/blogs">Read here.</a></p>
+    <hr>
+    
+    <p>thank you.</p>
+    
+    <hr class="minimal-hr">
+    
+    <p style="font-style: italic; color: #666;">"hope you get whatever your heart desires,
+      hope you become whoever you dream to be,
+      and know the world has room for you."</p>
+    
+    <hr class="minimal-hr">
+    
+    <p style="font-size: 25px; color: #999;">don't like this style and want a flashy portfolio? <a href="/flashy" target="_blank" style="color: #666;">click here</a></p>
 
-    <main class="main-content">
-        <section id="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Sandeep</h1>
-                        <h2>AI Application Engineer and Full-Stack Web Developer</h2>
-                        <p>A full-stack developer and a tech enthusiast, who enjoys connecting the dots by the use of technology.
-                            Recently, I've been leveraging <span class="highlight web-applications">Graph Databases</span> to create <span
-                                class="highlight ai-solutions">AI solutions</span> that enhance human life. I have a passion for <span
-                                class="highlight development-ai">Building innovative solutions.</p></span>
-                        <p>I'm <span class="highlight web-applications">stack-agnostic</span>, i can adapt and learn new technologies and implement them on the go.</p>
-                        <p class="key-skills-title">Key Skills</p>
-                        <div class="tags">
-                            <span class="tag full-stack">Python (PyTorch, scikit-learn)</span>
-                            <span class="tag ml">LangChain</span>
-                            <span class="tag python">LangGraph</span>
-                            <span class="tag react">Graph Databases (neo4j)</span>
-                            <span class="tag nodejs">Full Stack web development(can adapt with any framework/language)</span>
-                            <span class="tag full-stack">Vector Databases</span>
-                            <span class="tag full-stack">Computer vision</span>
-                            <span class="tag app-dev">Mobile App Development (React Native)</span>
-                        </div>
-                        <div class="cta-buttons">
-                            <a href="#contact" class="cta-button">
-                                <i class="ri-mail-line"></i> Contact
-                            </a>
-                            <a href="#" class="cta-button">
-                                <i class="ri-file-list-3-line"></i> Resume
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <footer>© 2025 sandeep built on caffeine + infinite curiosity to know the unknown.</footer>
+  </div>
 
-        <section id="about">
-            <div class="container">
-                <h2 class="section-title">Who am I?</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>I'm <strong> Sandeep</strong>, a full-stack developer and AI engineer. I wish to create a positive impact in peoples
-                            lives by the things i work on, i come from the state of Assam and i've been working on various projects for the past
-                            <strong> 3</strong> years
-                        <p>
-                            When i'm not learning anything or i have free time, you'll usually find me reading a book or sleeping :P </p>
-                       
-                        <div class="social-buttons">
-                            <a href="https://www.linkedin.com/in/sandeep-c-293380317/" class="social-button linkedin" aria-label="LinkedIn" target="_blank">
-                                <i class="ri-linkedin-fill" ></i>
-                            </a>
-                            <a href="https://github.com/sandeep-chakraborty" class="social-button github" aria-label="GitHub" target="_blank">
-                                <i class="ri-github-fill"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="terminal-container">
-                        <div class="hero-terminal">
-                            <div class="hero-terminal-header">
-                                <div class="buttons">
-                                    <div class="button"></div>
-                                    <div class="button"></div>
-                                    <div class="button"></div>
-                                </div>
-                                <div class="title">sandeep@portfolio:~$</div>
-                            </div>
-                            <div class="terminal-content">
-                                <p><span class="prompt">$</span> <span class="command">whoami</span></p>
-                                <p class="output">I'm Sandeep, a 20-year-old software developer from a small town in Assam, India. Being a geek all my life, I have a deep passion for tech, and this is what I truly understand and love.</p>
-                                <p><span class="prompt">$</span> <span class="command">ls skills</span></p>
-                                <p class="output">adapting to new language/frameworks,building computers</p>
-                                <p><span class="prompt">$</span> <span class="command">cat tech_specs.txt</span></p>
-                                <p class="output"><span class="highlight">OS:</span>(i use arch btw)</p>
-                                <p class="output"><span class="highlight">Editor:</span> Neovim (jk i use vs-code)</p>
-                                <p class="output"><span class="highlight">Languages:</span> C, Python, Java, JavaScript, Rust</p>
-                                <p class="output"><span class="highlight">Frameworks:</span> LangChain, LangGraph, CrewAI, KaboomJS, (almost any backend framework)</p>
-                                <p class="output"><span class="highlight">Tools:</span> Docker, Git, AWS, Neo4j, Redis, VectorDB</p>
-                                <p><span class="prompt">$</span> <span class="command">cat contact.txt</span></p>
-                                <p class="output">Email: <a href="mailto:heyitssandeep@gmail.com">heyitssandeep@gmail.com</a></p>
-                                <p class="output">GitHub: <a href="https://github.com/sandeep-chakraborty" target="_blank">github.com/sandeep-chakraborty</a></p>
-                                <p class="output">LinkedIn: <a href="https://www.linkedin.com/in/sandeep-c-293380317/" target="_blank">linkedin.com/in/sandeep</a></p>
-                                <p class="output">Twitter (i refuse to call it X) <a href="https://x.com/isitsandeep"
-                                        target="_blank">https://x.com/isitsandeep</a></p>
-                                <p><span class="prompt">$</span> <span class="command">_</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="projects">
-            <div class="container">
-                <h2 class="section-title">Some Noteworthy Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <i class="ri-folder-line project-icon"></i>
-                            <i class="ri-external-link-line project-link"></i>
-                        </div>
-                        <h3 class="project-title">Image Search Engine with CLIP and Faiss</h3>
-                        <p class="project-description">Built an efficient image search application using OpenAI's CLIP model and Meta's Faiss library, made it efficient and fast, learnt a lot of new technologies.</p>
-                        <div class="project-tags">
-                            <span class="project-tag python">Python</span>
-                            <span class="project-tag clip">CLIP</span>
-                            <span class="project-tag faiss">Faiss</span>
-                            <span class="project-tag flask">Flask</span>
-                        </div>
-                        <a href="https://github.com/sandeep-chakraborty/Image-search-engine" class="project-link-overlay" target="_blank"></a>
-                    </div>
-                    
-                    <!-- Existing project cards -->
-
-                  <div class="project-card">
-                        <div class="project-header">
-                            <i class="ri-folder-line project-icon"></i>
-                            <i class="ri-external-link-line project-link"></i>
-                        </div>
-                        <h3 class="project-title">AI web scrapper</h3>
-                        <p class="project-description">built a web scraper that extracts information from websites and uses the Ollama models to analyze or process the data as needed.</p>
-                        <div class="project-tags">
-                            <span class="project-tag python">Python</span>
-                            <span class="project-tag clip">ollama</span>
-                            <span class="project-tag faiss">beautifulSoup</span>
-                            <span class="project-tag flask">Streamlit</span>
-                            
-                        </div>
-                        <a href="https://github.com/sandeep-chakraborty/AI-Web-Scraper" class="project-link-overlay" target="_blank"></a>
-                    </div>
-                    
-                    <!-- Add more project cards as needed -->
-                </div>
-            </div>
-        </section>
-<section id="experience">
-    <div class="container">
-        <h2 class="section-title">My Journey</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="ri-book-open-line"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Started BCA</h3>
-                    <p>Being a geek all my life, I always wanted to contribute to the field of computer science and impact the world with my work. This was my gateway to this field (I'm pretty grateful for it).</p>
-                    <div class="timeline-meta">
-                        <span class="timeline-date">August 2022</span>
-                        <span class="timeline-location"><i class="ri-map-pin-line"></i> Dibrugarh, Assam, India</span>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="ri-code-box-line"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Freelance Developer</h3>
-                    <p>Began by taking small frontend projects and learned how to deal with various clients and their projects. This experience honed my skills in web development and client communication.</p>
-                    <div class="timeline-meta">
-                        <span class="timeline-date">April 2023</span>
-                        <span class="timeline-location"><i class="ri-map-pin-line"></i> Remote</span>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="ri-robot-line"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Internship at XibonAI</h3>
-                    <p>Started an internship at XibonAI, progressing from zero knowledge about Python to mastering tools like CrewAI and LangChain. Created the core of XibonAI's heart, reduced document generation speeds, implemented vector databases, and developed a full-stack application for XibonAI's users.</p>
-                    <ul class="timeline-achievements">
-                        <li>Mastered CrewAI and LangChain</li>
-                        <li>Implemented vector databases</li>
-                        <li>Developed full-stack application</li>
-                    </ul>
-                    <div class="timeline-meta">
-                        <span class="timeline-date">July 2024</span>
-                        <span class="timeline-location"><i class="ri-map-pin-line"></i> Adelaide, South Australia (Remote)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="ri-rocket-line"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Founding Engineer at XibonAI</h3>
-                    <p>I joined XibonAI as a founding engineer. Working on various projects, from creating full-stack applications to learning new technologies daily in this ever-evolving field. Successfully built and published mobile applications to the App Store using React Native. The company was later acquired.</p>
-                    <ul class="timeline-achievements">
-                        <li>Learned AWS and Redis</li>
-                        <li>Built scalable and secure applications</li>
-                        <li>Contributed to core product development</li>
-                        <li>Published React Native apps to App Store</li>
-                    </ul>
-                    <div class="timeline-meta">
-                        <span class="timeline-date">August 2024</span>
-                        <span class="timeline-location"><i class="ri-map-pin-line"></i> Adelaide, South Australia (Remote)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="ri-code-s-slash-line"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Full Stack AI Engineer at Karyon Bio</h3>
-                    <p>Leading healthcare AI integration efforts, focusing on building intelligent systems that connect clinical data sources with advanced AI capabilities in a secure, HIPAA-compliant environment.</p>
-                    <ul class="timeline-achievements">
-                        <li>Conducted prompt-led requirements discovery workshops with clinicians</li>
-                        <li>Delivered end-to-end full-stack solutions with React/TypeScript and Python</li>
-                        <li>Built agentic AI & RAG pipelines using LangChain, OpenAI Agents SDK, Neo4j and custom agentic solutions</li>
-                        <li>Integrated healthcare systems (FHIR/HL7, DICOM) with secure APIs</li>
-                    </ul>
-                    <div class="timeline-meta">
-                        <span class="timeline-date">June 2025</span>
-                        <span class="timeline-location"><i class="ri-map-pin-line"></i> Mountain View, California (Remote)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="ri-graduation-cap-line"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Graduation!</h3>
-                    <p>Received my Computer Science degree</p>
-                    <div class="timeline-meta">
-                        <span class="timeline-date">July 2025</span>
-                        <span class="timeline-location"><i class="ri-map-pin-line"></i> Dibrugarh, Assam, India</span>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="ri-lightbulb-flash-line"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Prompt Engineer at Warp Development</h3>
-                    <ul class="timeline-achievements">
-                        <li>Engineered high-precision prompts for use cases like summarization, chat interfaces, and decision support.</li>
-                        <li>Developed rapid prototypes using Python, OpenAI APIs, and low-code tools (Cursor, V0) to validate AI features.</li>
-                        <li>Designed and executed A/B tests, fine-tuning loops, and performance evaluations across real-world datasets.</li>
-                        <li>Integrated prompt pipelines with backend systems; automated workflows to test prompt outputs at scale.</li>
-                        <li>Partnered with product and infra teams to ship proof-of-concepts aligned with technical constraints and user needs.</li>
-                        <li>Created internal tools for prompt testing, versioning, and benchmarking.</li>
-                        <li>Prioritized prompt safety, interpretability, and model fairness in all production-facing deployments.</li>
-                        <li>Maintained documentation for prompt iterations, experiment results, and prototype architecture.</li>
-                    </ul>
-                    <div class="timeline-meta">
-                        <span class="timeline-date">August 2025</span>
-                        <span class="timeline-location"><i class="ri-map-pin-line"></i> South Africa, Australia (Remote)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="blogs">
-    <div class="container">
-        <h2 class="section-title">Latest Blog Posts</h2>
-        <p class="view-archive"><a href="https://sandeep-chakraborty.hashnode.dev" class="view-all-posts" target="_blank">View All Posts</a></p>
-        <div class="projects-grid">
-            <div class="project-card" style="background-color: white;">
-                <div class="project-header">
-                    <i class="ri-article-line project-icon"></i>
-                    <i class="ri-external-link-line project-link"></i>
-                </div>
-                <h3 class="project-title">How I Built an Image Search Engine with CLIP and FAISS</h3>
-                <p class="project-description">It all started one Sunday evening when I got an email from Medium's daily digest. Among the articles was a blog post titled "Building an Image Similarity Search Engine with FAISS and CLIP" by Lihi Gur Arie...</p>
-                <div class="project-tags">
-                    <span class="blog-tag">Image Search</span>
-                    <span class="blog-tag">AI</span>
-                    <span class="blog-tag">RAG</span>
-                    <span class="blog-tag">LLM</span>
-                </div>
-                <a href="https://sandeep-chakraborty.hashnode.dev/how-i-built-an-image-search-engine-with-clip-and-faiss" class="project-link-overlay" target="_blank"></a>
-            </div>
-            <div class="project-card" style="background-color: white;">
-                <div class="project-header">
-                    <i class="ri-article-line project-icon"></i>
-                    <i class="ri-external-link-line projec/Users/sandeep/Desktop/dev/personalProj/MinimalDevFolio24/index.htmlt-link"></i>
-                </div>
-                <h3 class="project-title">From Idea to App Store: How I Built an App Using React Native & Expo</h3>
-                <p class="project-description">Journey through the process of building and publishing my first React Native app, from learning the basics to overcoming challenges with Apple's review process...</p>
-                <div class="project-tags">
-                    <span class="blog-tag">React Native</span>
-                    <span class="blog-tag">Mobile Dev</span>
-                    <span class="blog-tag">App Store</span>
-                    <span class="blog-tag">Expo</span>
-                    
-                </div>
-                <a href="https://sandeep-chakraborty.hashnode.dev/from-idea-to-app-store-how-i-built-an-app-using-react-native-expo" class="project-link-overlay" target="_blank"></a>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="contact">
-    <div class="container">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-content">
-            <div class="contact-text">
-                <h3>Wanna discuss projects or just have a chat?</h3>
-                <p>I'm always open to new opportunities and interesting conversations. Drop me a message, and I'll get back to you as soon as possible!</p>
-                <div class="contact-info">
-                    <p ><a href="mailto:heyitssandeep@gmail.com" style="text-decoration: none; color: black;">heyitssandeep@gmail.com</a></p>
-                    <p><i class="ri-map-pin-line"></i> Dibrugarh, Assam, India</p>
-                </div>
-            </div>
-            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="790db65e-de58-4d40-af90-c98603f6ce9c">
-                
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message (optional)</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                
-                <!-- Honeypot Spam Protection -->
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                
-                <!-- Custom Confirmation / Success Page -->
-                <input type="hidden" name="redirect" value="https://sandeeep.com/contact-success">
-                
-                <button type="submit" class="submit-button">
-                    <i class="ri-send-plane-fill"></i> Send Message
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
-        <!-- Add more sections as needed -->
-    </main>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1e1e2e" fill-opacity="1" d="M0,224L20,208C40,192,80,160,120,160C160,160,200,192,240,192C280,192,320,160,360,160C400,160,440,192,480,213.3C520,235,560,245,600,218.7C640,192,680,128,720,96C760,64,800,64,840,80C880,96,920,128,960,117.3C1000,107,1040,53,1080,69.3C1120,85,1160,171,1200,224C1240,277,1280,299,1320,266.7C1360,235,1400,149,1420,106.7L1440,64L1440,320L1420,320C1400,320,1360,320,1320,320C1280,320,1240,320,1200,320C1160,320,1120,320,1080,320C1040,320,1000,320,960,320C920,320,880,320,840,320C800,320,760,320,720,320C680,320,640,320,600,320C560,320,520,320,480,320C440,320,400,320,360,320C320,320,280,320,240,320C200,320,160,320,120,320C80,320,40,320,20,320L0,320Z"></path></svg>
-    <footer class="footer">
-        
-        
-<footer class="footer">
-    <div class="container">
-
-        <p>Connect with me on social media.</p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/sandeep-c-293380317/" class="social-icon" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
-            <a href="https://github.com/sandeep-chakraborty" class="social-icon" aria-label="GitHub"><i class="ri-github-fill"></i></a>
-           
-            <a href="https://x.com/isitsandeep" class="social-icon" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
-           
-        </div>
-        <div class="cta-buttons">
-            <a href="#" class="cta-button">Resume</a>
-            <a href="mailto:heyitssandeep@gmail.com?subject=Hey%20Sandeep!&body=I%20came%20across%20from%20your%20website%2C%20let's%20talk%20!" class="cta-button smooth-scroll">Let's Talk</a>
-        </div>
-        <p>Designed and Developed with <span class="heart">❤️</span> by Sandeep, a sleepless night and caffeine</p>
-        <p>Copyright © 2025 Sandeep Chakraborty</p>
-    </div>
-</footer>
-<script src="oneko.js"></script>
-<script src="index.js"></script>
-
+  <script>
+    function toggleExpand(id) {
+      const element = document.getElementById(id);
+      const parent = element.parentElement;
+      
+      if (parent.classList.contains('expanded')) {
+        parent.classList.remove('expanded');
+      } else {
+        // Close all other expanded items
+        document.querySelectorAll('.expanded').forEach(el => el.classList.remove('expanded'));
+        parent.classList.add('expanded');
+      }
+    }
+  </script>
 </body>
 </html>
